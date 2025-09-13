@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Good Hope Travel & Tours</title>
+  <style>
+    :root{
+      --accent:#0f766e; /* teal */
+      --accent-600:#0ea5a0;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f8fafc;
+      --radius:12px;
+      --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-600));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;padding:48px 0;align-items:center}
+    .hero h1{font-size:34px;margin:0;line-height:1.05}
+    .hero p{color:var(--muted);margin:8px 0 0}
+    .cta-group{margin-top:18px;display:flex;gap:12px}
+    .btn{background:var(--accent);color:white;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn.secondary{background:transparent;border:2px solid rgba(15,118,110,0.12);color:var(--accent)}
+
+    #trips{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06);}
+    .card h3{margin:0 0 6px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .price{font-weight:800;margin-top:12px}
+
+    footer{margin-top:36px;padding:20px 0;color:var(--muted);font-size:14px}
+
+    /* contact form */
+    .contact{display:grid;gap:12px;max-width:520px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef0;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+
+    /* chat widget placeholder */
+    #chat-widget-container{position:fixed;right:18px;bottom:18px}
+    .chat-button{width:64px;height:64px;border-radius:999px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 10px 30px rgba(15,118,110,0.18);cursor:pointer;border:0}
+
+    @media(min-width:768px){
+      .hero{grid-template-columns:1fr 420px}
+      .hero h1{font-size:44px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GH</div>
+        <div>
+          <div style="font-weight:800">Good Hope Travel & Tours</div>
+          <div style="font-size:13px;color:var(--muted)">Your ideal travel & tours companion</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#trips">Trips</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>We craft curated travel experiences that create lasting memories.</h1>
+          <p>We offer tailor-made packages across Kenya, the rest of Africa, and international destinations. Explore our best offers and let us plan your next getaway.</p>
+
+          <div class="cta-group">
+            <button class="btn" onclick="document.getElementById('trips').scrollIntoView({behavior:'smooth'})">Explore Trips</button>
+            <button class="btn secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Quote</button>
+          </div>
+
+          <div style="margin-top:20px;color:var(--muted);font-size:14px">
+            <strong>Sample offers:</strong>
+            <div style="margin-top:8px">
+              <span style="display:inline-block;margin-right:12px">• Voyager Beach Mombasa — 4D/3N — USD 350</span>
+              <span style="display:inline-block;margin-right:12px">• Diamonds Beach & Golf Resort Diani — 4D/3N — USD 480</span>
+              <span style="display:inline-block">• Dubai — 6D/5N — USD 1,500</span>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Why travel with us?</h3>
+            <p class="meta">Personalized itineraries • 24/7 support • Curated experiences</p>
+            <p>We handle logistics, accommodation, and local experiences so you can focus on enjoying your trip. Tell us your interests and budget and we'll craft the perfect plan.</p>
+            <div style="margin-top:12px"><button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="trips">
+        <div class="card">
+          <h3>Voyager Beach Mombasa</h3>
+          <div class="meta">Duration: 4 Days / 3 Nights • Price: USD 350</div>
+          <p>Stay at Voyager Beach with beachfront access, daily breakfast, airport transfers, and guided local excursions. Perfect for families and couples seeking a coastal escape.</p>
+        </div>
+
+        <div class="card">
+          <h3>Pride Inn Paradise Mombasa</h3>
+          <div class="meta">Duration: 4 Days / 3 Nights • Price: USD 350</div>
+          <p>Family-friendly beachfront property with pool access, optional water sports, and flexible meal plans. Includes airport transfers and a guided city tour.</p>
+        </div>
+
+        <div class="card">
+          <h3>Diamonds Beach & Golf Resort Diani</h3>
+          <div class="meta">Duration: 4 Days / 3 Nights • Price: USD 480</div>
+          <p>Luxury beachfront resort with golf course access, premium dining, spa options, and evening entertainment. Ideal for travelers seeking relaxation and upscale amenities.</p>
+        </div>
+
+        <div class="card">
+          <h3>Adventure Vacation — Kenya Highlights</h3>
+          <div class="meta">Duration: 8 Days / 7 Nights • Price: USD 1,070</div>
+          <p>Explore Amboseli, Maasai culture, coastal relaxation in Mombasa, and beach time in Diani. Includes park fees, guided game drives, accommodation, and select meals.</p>
+        </div>
+
+        <div class="card">
+          <h3>Discover Zimbabwe</h3>
+          <div class="meta">Duration: 8 Days / 7 Nights • Price: USD 2,670</div>
+          <p>Experience Hwange National Park, Victoria Falls, and cultural highlights. Package includes guided safaris, accommodation, internal transfers, and key sightseeing.</p>
+        </div>
+
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h2>Contact Us</h2>
+        <div class="card contact">
+          <form onsubmit="event.preventDefault(); alert('Demo: form submitted. Replace with your form handling.');">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email address" required />
+            <textarea name="message" placeholder="Tell us what you'd like (destination, dates, budget)"></textarea>
+            <div style="display:flex;gap:10px;align-items:center">
+              <button type="submit" class="btn">Send Request</button>
+              <button type="button" class="btn secondary" onclick="document.getElementById('chat-button').click()">Chat with us</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© Good Hope Travel & Tours LTD • We craft travel experiences with care.</div>
+    </footer>
+  </div>
+
+  <!-- Chat widget container: add your chat widget script here and target #chat-widget-container or the button below -->
+<!-- Widget Configuration -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script>
+    window.ChatWidgetConfig = {
+        webhook: {
+            url: 'https://agents.customcx.com/webhook/14856395-4735-4c95-975a-a093c4e1638c/chat',
+            route: 'general'
+        },
+        branding: {
+            logo: 'https://images.unsplash.com/photo-1744116432674-e6ff2b6d9544?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            name: 'GoodHope Agent',
+            welcomeText: 'Hi 👋, how can we help?',
+            responseTimeText: 'Book a trip in minutes',
+            
+        },
+        style: {
+            primaryColor: '#854fff',
+            secondaryColor: '#6b3fd4',
+            position: 'right', // 'left' or 'right'
+            backgroundColor: '#ffffff',
+            fontColor: '#333333',
+            
+
+        }
+        
+
+    };
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/shadrack-ago/n8n/widget.js?v=2.6"></script>
+
+  <!-- Insert chat widget script here. Example:
+       <script src="/path/to/chat-widget.js"></script>
+       <script>
+         ChatWidget.init({ container: '#chat-widget-container', agentId: 'goodhope-agent' })
+       </script>
+  -->
+
+</body>
+</html>
